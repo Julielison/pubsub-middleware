@@ -109,6 +109,23 @@ cd pubsub-middleware
 ./gradlew :example-apps:run
 ```
 
+### Testando manualmente com Netcat (nc)
+
+Você pode interagir e testar a comunicação diretamente com o broker via terminal utilizando o netcat (`nc`). Estando com o broker rodando (ex: na porta 9001), abra um novo terminal:
+
+```bash
+# Conectar ao broker
+nc localhost 9001
+```
+
+Em seguida, cole linha a linha para enviar os comandos em JSON (pressione Enter para enviar):
+
+```json
+{"action": "SUBSCRIBE", "topic": "temperatura"}
+{"action": "PUBLISH", "topic": "temperatura", "payload": "{\"valor\": 25.3}"}
+{"action": "UNSUBSCRIBE", "topic": "temperatura"}
+```
+
 ---
 
 ## Requisitos Atendidos
