@@ -11,14 +11,14 @@ subprojects {
     apply plugin: 'groovy'
 
     dependencies {
-        implementation 'org.apache.groovy:groovy-all:4.0.15'
-        implementation 'org.apache.groovy:groovy-json:4.0.15'
-        testImplementation 'org.spockframework:spock-core:2.3-groovy-4.0'
+        implementation 'org.apache.groovy:groovy-all:5.0.5'
+        implementation 'org.apache.groovy:groovy-json:5.0.5'
+        // testImplementation 'org.spockframework:spock-core:2.3-groovy-4.0' // Update when Spock for Groovy 5.0 is available
     }
 
     java {
         toolchain {
-            languageVersion = JavaLanguageVersion.of(11)
+            languageVersion = JavaLanguageVersion.of(25)
         }
     }
 

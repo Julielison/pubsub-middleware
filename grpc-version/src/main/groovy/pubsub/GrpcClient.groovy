@@ -1,5 +1,6 @@
+package pubsub
 
-
+import com.pubsub.grpc.*
 import io.grpc.ManagedChannel
 import io.grpc.ManagedChannelBuilder
 import io.grpc.stub.StreamObserver
@@ -7,7 +8,7 @@ import io.grpc.stub.StreamObserver
 class GrpcClient {
     static void main(String[] args) {
         // Inicializa o gRPC channel
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9005)
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("127.0.0.1", 9005)
                 .usePlaintext() // desabilita TLS/SSL para rodar em localhost
                 .build()
 

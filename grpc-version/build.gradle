@@ -49,3 +49,15 @@ sourceSets {
         }
     }
 }
+
+task runBroker(type: JavaExec) {
+    mainClass = 'pubsub.GrpcBroker'
+    classpath = sourceSets.main.runtimeClasspath
+    description = 'Executa o servidor/broker gRPC'
+}
+
+task runClient(type: JavaExec) {
+    mainClass = 'pubsub.GrpcClient'
+    classpath = sourceSets.main.runtimeClasspath
+    description = 'Executa o cliente gRPC de teste'
+}

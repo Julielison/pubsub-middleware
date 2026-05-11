@@ -4,6 +4,7 @@ package pubsub;
 
 option java_package = "com.pubsub.grpc";
 option java_outer_classname = "PubSubProto";
+option java_multiple_files = true;
 
 // O serviço principal do Pub/Sub
 service BrokerService {
