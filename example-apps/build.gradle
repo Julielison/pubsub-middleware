@@ -1,0 +1,19 @@
+description = 'PubSub Example Applications - Aplicações de exemplo'
+
+dependencies {
+    implementation project(':client-lib')
+    implementation 'org.apache.groovy:groovy-all:4.0.15'
+    implementation 'org.apache.groovy:groovy-json:4.0.15'
+}
+
+apply plugin: 'application'
+
+mainClass = 'br.edu.ifpb.pubsub.examples.RunAllExamples'
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'br.edu.ifpb.pubsub.examples.RunAllExamples'
+    }
+    from configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}

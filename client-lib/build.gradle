@@ -1,0 +1,6 @@
+description = 'PubSub Client Library - Biblioteca cliente para o middleware'
+
+dependencies {
+    implementation 'org.apache.groovy:groovy-all:4.0.15'
+    implementation 'org.apache.groovy:groovy-json:4.0.15'
+}

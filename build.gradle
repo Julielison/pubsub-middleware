@@ -1,0 +1,31 @@
+plugins {
+    id 'groovy' apply false
+}
+
+allprojects {
+    group = 'br.edu.ifpb.pubsub'
+    version = '1.0.0'
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'groovy'
+
+    dependencies {
+        implementation 'org.apache.groovy:groovy-all:4.0.15'
+        implementation 'org.apache.groovy:groovy-json:4.0.15'
+        testImplementation 'org.spockframework:spock-core:2.3-groovy-4.0'
+    }
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    compileGroovy {
+        groovyOptions.optimizationOptions = [indy: false]
+    }
+}

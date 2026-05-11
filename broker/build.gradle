@@ -1,0 +1,20 @@
+description = 'PubSub Broker - Componente intermediário de mensagens'
+
+dependencies {
+    implementation 'org.apache.groovy:groovy-all:4.0.15'
+    implementation 'org.apache.groovy:groovy-json:4.0.15'
+}
+
+application {
+    mainClass = 'br.edu.ifpb.pubsub.broker.BrokerMain'
+}
+
+apply plugin: 'application'
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'br.edu.ifpb.pubsub.broker.BrokerMain'
+    }
+    from configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}

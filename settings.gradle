@@ -1,0 +1,5 @@
+rootProject.name = 'pubsub-middleware'
+
+include 'broker'
+include 'client-lib'
+include 'example-apps'
