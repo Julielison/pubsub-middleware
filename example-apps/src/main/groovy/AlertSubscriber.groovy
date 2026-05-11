@@ -1,6 +1,3 @@
-package br.edu.ifpb.pubsub.examples
-
-import br.edu.ifpb.pubsub.client.PubSubClient
 
 class AlertSubscriber {
 

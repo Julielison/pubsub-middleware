@@ -1,4 +1,3 @@
-package br.edu.ifpb.pubsub.broker
 
 /**
  * Ponto de entrada do Broker.

@@ -1,5 +1,3 @@
-package br.edu.ifpb.pubsub.client
-
 import groovy.json.JsonSlurper
 
 /**

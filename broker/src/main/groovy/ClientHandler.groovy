@@ -1,4 +1,3 @@
-package br.edu.ifpb.pubsub.broker
 
 import java.util.concurrent.atomic.AtomicInteger
 

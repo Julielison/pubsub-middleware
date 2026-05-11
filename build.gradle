@@ -1,7 +1,3 @@
-plugins {
-    id 'groovy' apply false
-}
-
 allprojects {
     group = 'br.edu.ifpb.pubsub'
     version = '1.0.0'
@@ -21,8 +17,20 @@ subprojects {
     }
 
     java {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(11)
+        }
+    }
+
+    sourceSets {
+        main {
+            groovy {
+                srcDirs = ['src/main/groovy']
+                exclude 'build.gradle'
+                exclude 'bin/**'
+                exclude 'build/**'
+            }
+        }
     }
 
     compileGroovy {

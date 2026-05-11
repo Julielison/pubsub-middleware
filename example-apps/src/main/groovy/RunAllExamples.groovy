@@ -1,6 +1,4 @@
-package br.edu.ifpb.pubsub.examples
 
-import br.edu.ifpb.pubsub.broker.Broker
 
 class RunAllExamples {
 

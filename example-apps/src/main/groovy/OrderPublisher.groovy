@@ -1,6 +1,4 @@
-package br.edu.ifpb.pubsub.examples
 
-import br.edu.ifpb.pubsub.client.PubSubClient
 
 /**
  * PUBLICADOR 2: Sistema de E-commerce

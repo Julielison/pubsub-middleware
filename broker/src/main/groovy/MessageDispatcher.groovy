@@ -1,4 +1,3 @@
-package br.edu.ifpb.pubsub.broker
 
 import java.util.concurrent.LinkedBlockingQueue
 import java.util.concurrent.ExecutorService

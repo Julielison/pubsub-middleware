@@ -13,7 +13,6 @@ pubsub-middleware/
 ├── example-apps/      # Aplicações de exemplo
 ├── build.gradle       # Build raiz
 ├── settings.gradle
-└── run.sh             # Script de execução rápida
 ```
 
 ### Componentes
