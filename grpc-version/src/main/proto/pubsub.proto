@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package pubsub;
+
+option java_package = "com.pubsub.grpc";
+option java_outer_classname = "PubSubProto";
+
+// O serviço principal do Pub/Sub
+service BrokerService {
+  // Publica uma mensagem em um tópico
+  rpc Publish (PublishRequest) returns (PublishResponse);
+  
+  // Inscreve-se em um tópico. O retorno é um stream de mensagens (Server Streaming).
+  rpc Subscribe (SubscribeRequest) returns (stream MessageEvent);
+}
+
+message PublishRequest {
+  string topic = 1;
+  string payload = 2;
+}
+
+message PublishResponse {
+  string status = 1;
+  string message = 2;
+}
+
+message SubscribeRequest {
+  string topic = 1;
+}
+
+message MessageEvent {
+  string topic = 1;
+  string payload = 2;
+}

@@ -1,0 +1,51 @@
+plugins {
+    id 'groovy'
+    id 'application'
+    id 'com.google.protobuf' version '0.9.4'
+}
+
+group = 'com.pubsub.grpc'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+def grpcVersion = '1.59.0'
+def protobufVersion = '3.24.0'
+def protocVersion = protobufVersion
+
+dependencies {
+    implementation 'org.apache.groovy:groovy:5.0.5'
+    
+    // dependências do gRPC
+    implementation "io.grpc:grpc-netty-shaded:${grpcVersion}"
+    implementation "io.grpc:grpc-protobuf:${grpcVersion}"
+    implementation "io.grpc:grpc-stub:${grpcVersion}"
+    compileOnly 'org.apache.tomcat:annotations-api:6.0.53' // necessário para o Java 9+ gerado pelo gRPC
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+protobuf {
+    protoc { artifact = "com.google.protobuf:protoc:${protocVersion}" }
+    plugins {
+        grpc { artifact = "io.grpc:protoc-gen-grpc-java:${grpcVersion}" }
+    }
+    generateProtoTasks {
+        all()*.plugins { grpc {} }
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'build/generated/source/proto/main/grpc'
+            srcDirs 'build/generated/source/proto/main/java'
+        }
+    }
+}
